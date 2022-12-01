@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-pac-fhao
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-pac-fhao
+    app.kubernetes.io/part-of: build-suite-test-application-sfrg
+  name: test-component-pac-fhao
+  namespace: build-e2e-qugq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: test-component-pac-fhao
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: test-component-pac-fhao
+    spec:
+      containers:
+      - image: quay.io/psturc/test-images
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
